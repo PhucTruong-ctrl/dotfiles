@@ -1,0 +1,63 @@
+# --- CẤU HÌNH TỔNG QUAN ---
+add_newline = false       # Tắt dòng trống thừa thãi, tiết kiệm đất cho màn laptop
+command_timeout = 1000    # Tăng thời gian chờ để đỡ bị lỗi timeout khi git lag
+
+# Sắp xếp thứ tự hiển thị: Thư mục -> Git -> Ngôn ngữ -> Xuống dòng -> Dấu nhắc lệnh
+format = """
+$directory\
+$git_branch\
+$git_status\
+$python\
+$nodejs\
+$golang\
+$rust\
+$line_break\
+$character"""
+
+# --- DẤU NHẮC LỆNH (CHARACTER) ---
+[character]
+success_symbol = "[➜](bold green)"      # Lệnh đúng hiện mũi tên xanh
+error_symbol = "[✗](bold red)"          # Lệnh sai hiện dấu X đỏ (biết ngay code lỗi)
+vimcmd_symbol = "[V](bold green)"       # Khi vào chế độ Vim
+
+# --- THƯ MỤC (DIRECTORY) ---
+[directory]
+style = "bold blue"       # Màu xanh dương (Pywal sẽ quản lý màu này)
+truncation_length = 3     # Chỉ hiện 3 thư mục gần nhất cho gọn
+truncation_symbol = "…/"  # Dấu 3 chấm nếu đường dẫn quá dài
+read_only = " 🔒"
+
+# --- GIT (QUAN TRỌNG CHO IT) ---
+[git_branch]
+symbol = "🌱 "
+style = "bold purple"     # Nhánh Git màu tím
+
+[git_status]
+style = "bold red"        # Nếu có file chưa commit thì hiện màu đỏ cảnh báo
+format = '([$all_status$ahead_behind]($style) )'
+conflicted = "🏳 "
+up_to_date = "✅ "
+untracked = "🤷 "
+modified = "📝 "
+staged = "++"
+deleted = "🗑 "
+
+# --- NGÔN NGỮ (FLEX VERSION KHI CODE) ---
+# Chỉ hiện khi mày cd vào thư mục có file code tương ứng
+
+[python]
+symbol = "🐍 "
+style = "bold yellow"
+pyenv_version_name = true # Hiện version (VD: 3.10.2)
+
+[nodejs]
+symbol = "⬢ "
+style = "bold green"
+
+[golang]
+symbol = "🐹 "
+style = "bold cyan"
+
+[rust]
+symbol = "🦀 "
+style = "bold red"
