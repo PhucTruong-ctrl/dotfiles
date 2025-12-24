@@ -40,3 +40,5 @@ alias reload='source ~/.zshrc' # Gõ reload là cập nhật config
 # if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
 #   exec tmux
 # fi
+#
+

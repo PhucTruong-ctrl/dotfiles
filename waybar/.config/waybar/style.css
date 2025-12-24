@@ -1,4 +1,5 @@
 @import "../omarchy/current/theme/waybar.css";
+@import url("file:///home/phuctruong/.cache/wal/colors-waybar.css");
 
 * {
   background-color: @background;
