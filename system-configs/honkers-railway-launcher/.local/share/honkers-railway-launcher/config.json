@@ -1,0 +1,119 @@
+{
+  "launcher": {
+    "language": "en-us",
+    "edition": "Global",
+    "style": "Modern",
+    "temp": "/home/phuctruong/.local/share/honkers-railway-launcher",
+    "sophon": {
+      "threads": 4
+    },
+    "repairer": {
+      "threads": 4,
+      "fast": false
+    },
+    "behavior": "Hide"
+  },
+  "game": {
+    "path": {
+      "global": "/home/phuctruong/.local/share/honkers-railway-launcher/HSR",
+      "china": "/home/phuctruong/.local/share/honkers-railway-launcher/HSR China"
+    },
+    "voices": [
+      "ja-jp"
+    ],
+    "wine": {
+      "prefix": "/home/phuctruong/.local/share/honkers-railway-launcher/prefix",
+      "builds": "/home/phuctruong/.local/share/honkers-railway-launcher/runners",
+      "selected": "spritz-wine-tkg-staging-wow64-10.15-8",
+      "sync": "FSync",
+      "language": "English",
+      "borderless": true,
+      "drives": {
+        "drive_c": true,
+        "game_folder": "G",
+        "map_folders": {}
+      },
+      "virtual_desktop": {
+        "enabled": true,
+        "width": 1280,
+        "height": 720
+      },
+      "shared_libraries": {
+        "wine": true,
+        "gstreamer": true
+      }
+    },
+    "dxvk": {
+      "builds": "/home/phuctruong/.local/share/honkers-railway-launcher/dxvks"
+    },
+    "enhancements": {
+      "fsr": {
+        "strength": 2,
+        "quality": "Performance",
+        "enabled": true
+      },
+      "gamemode": false,
+      "hud": "DXVK",
+      "gamescope": {
+        "enabled": false,
+        "window_mode": "Default",
+        "game_window": {
+          "width": null,
+          "height": null
+        },
+        "gamescope_window": {
+          "width": null,
+          "height": null
+        },
+        "framerate": {
+          "focused": null,
+          "unfocused": null
+        },
+        "upscaling": {
+          "upscaler": "None",
+          "filter": "None",
+          "sharpness": "None"
+        },
+        "options": {
+          "hdr_support": false,
+          "realtime_scheduler": false,
+          "adaptive_sync": false,
+          "force_grab_cursor": false,
+          "mangohud": false
+        },
+        "extra_args": ""
+      }
+    },
+    "environment": {
+      "__NV_PRIME_RENDER_OFFLOAD": "1",
+      "__GLX_VENDOR_LIBRARY_NAME": "nvidia",
+      "VK_ICD_FILENAMES": "/usr/share/vulkan/icd.d/nvidia_icd.json",
+      "DXVK_HUD": "fps,gpuload,devinfo",
+      "DXVK_FRAME_RATE": "55",
+      "DXVK_STATE_CACHE_PATH": "/tmp/dxvk-cache",
+      "mesa_glthread": "true"
+    },
+    "command": null
+  },
+  "sandbox": {
+    "enabled": false,
+    "isolate_home": true,
+    "hostname": null,
+    "args": null,
+    "private": [],
+    "mounts": {
+      "read_only": {},
+      "bind": {},
+      "symlinks": {}
+    }
+  },
+  "components": {
+    "path": "/home/phuctruong/.local/share/honkers-railway-launcher/components",
+    "servers": [
+      "https://github.com/an-anime-team/components"
+    ]
+  },
+  "patch": {
+    "path": "/home/phuctruong/.local/share/honkers-railway-launcher/patch"
+  }
+}
