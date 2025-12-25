@@ -2,8 +2,9 @@
   "reload_style_on_change": true,
   "layer": "top",
   "position": "top",
-  "spacing": 0,
+  "spacing": 10,
   "height": 26,
+  "margin": 6,
   "modules-left": ["custom/omarchy", "hyprland/workspaces"],
   "modules-center": ["clock", "custom/update", "custom/screenrecording-indicator"],
   "modules-right": [
