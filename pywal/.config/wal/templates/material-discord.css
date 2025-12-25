@@ -1,0 +1,105 @@
+/**
+ * @name Material_Discord_Custom (Pywal Edition)
+ * @version 2.1.1
+ * @description Material Design with Pywal Colors
+ * @author CapnKitten, Bobby Wibowo, & Automation
+ */
+
+@import url("https://capnkitten.github.io/BetterDiscord/Themes/Material-Discord/css/source.css?v=1751185517");
+@import url("https://bobbywibowo.github.io/Material-Discord-Custom/dist/src/source.css?v=1751237314");
+
+:root {{
+    --app-font: 'Rubik', 'Roboto', sans-serif; /* Modern font preference */
+    --code-font: 'JetBrains Mono', monospace;
+    
+    /* === Pywal Mapping === */
+    --accent-color: {color4}; /* Main accent */
+    --accent-color-hover: {color5};
+    --accent-color-active: {color4};
+    
+    /* RGB values for transparency (Pywal provides "R,G,B") */
+    --accent-rgb: {color4.rgb}; 
+    
+    /* Overriding derived vars to use Pywal RGBA directly */
+    --__spoiler-background-color--hidden: rgba({color4.rgb}, 0.4);
+    --__spoiler-background-color--hidden--hover: rgba({color4.rgb}, 0.7);
+    
+    /* Material Theme Specifics */
+    --primary-color: {color4};
+    --secondary-color: {color2};
+    --success-color: {color2};
+    --danger-color: {color1};
+    --warning-color: {color3};
+    
+    /* Backgrounds via Pywal */
+    /* We overwrite these to use the wallpaper or pywal darks */
+    --background-primary: rgba({color0.rgb}, 0.9);
+    --background-secondary: rgba({color0.rgb}, 0.7);
+    --background-tertiary: rgba({color0.rgb}, 0.6);
+}}
+
+/* === Wallpaper Background Support === */
+body {{
+    background: url('{wallpaper}') center/cover fixed !important;
+}}
+
+/* fix transparency for material theme */
+#app-mount {{
+    background-color: transparent !important;
+}}
+
+/* === User's Custom Overrides === */
+
+/* Upstream font for title bar */
+.visual-refresh .bar_c38106 .title__85643 .text-sm\/medium_cf4812 {{
+    font-family: "Google Sans", sans-serif !important
+}}
+
+/* Disable Gift button */
+div[class*="buttons-"] button[aria-label="Send a gift"] {{
+    display: none !important;
+}}
+
+/* Remove Activity Status */
+[class*='membersGroup']:has([role=button]),
+[class*='member'] [class*='container']:has([class*='badges']) {{
+  display: none;
+}}
+
+/* Status-based Activity Status Icons (Recolored with Pywal) */
+[class^=memberInner]:has(> div > [aria-label*="Online"]) [class^=subText] svg > path[fill="#23a55a"] {{ fill: {color2} }}
+[class^=memberInner]:has(> div >[aria-label*=Idle]) [class^=subText] svg > path[fill="#23a55a"] {{ fill: {color3} }}
+[class^=memberInner]:has(> div > [aria-label*="Do Not Disturb"]) [class^=subText] svg > path[fill="#23a55a"] {{ fill: {color1} }}
+[class^=memberInner]:has(> div > [aria-label*=Streaming]) [class^=subText] svg > path[fill="#23a55a"] {{ fill: {color5} }}
+[class^=memberInner] [class^=subText] svg > path[fill="#23a55a"] {{ fill: {color8} }}
+
+/* Fix display of long embed footer */
+[class*="embedFooterText__"] {{
+    word-break: break-all;
+}}
+
+/* Allow texts in user profile's activity to be selectable */
+[class^="activityList_"] [class*="card__"] {{
+    user-select: text;
+}}
+
+/* Remove "Active Now" columns from Friends page */
+[aria-label="Friends"] [class^="nowPlayingColumn__"] {{
+    display: none;
+}}
+
+/** VENCORD CLEANUP **/
+
+/* Remove Vencord support banner */
+.vc-special-card-special {{
+    display: none;
+}}
+
+/* Hide nameplates */
+[class^="childContainer__"][class*="nameplated__"] > [class^="container__"]{{
+    display: none !important;
+}}
+
+[class*="platedWrapper__"] > [class^="container__"]{{
+    display: none !important;
+}}
