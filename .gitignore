@@ -1,0 +1,97 @@
+# Dotfiles .gitignore
+
+# ============================================
+# Large Files & Personal Data
+# ============================================
+# Wallpapers (too large for git)
+wallpapers/
+
+# Personal credentials/tokens
+**/secrets/
+**/tokens/
+**/.env
+
+# ============================================
+# Editor & IDE
+# ============================================
+# Neovim
+nvim/.config/nvim/plugin/packer_compiled.lua
+nvim/.config/nvim/.netrwhist
+nvim/.config/nvim/undo/
+nvim/.config/nvim/swap/
+nvim/.config/nvim/lazy-lock.json.backup
+
+# VSCode (if any)
+.vscode/
+*.code-workspace
+
+# ============================================
+# Shell & Terminal
+# ============================================
+# Zsh
+zsh/.zsh_history
+zsh/.zcompdump*
+zsh/.zsh_sessions/
+
+# Tmux
+tmux/.config/tmux/plugins/
+tmux/.config/tmux/resurrect/
+
+# ============================================
+# Application Caches
+# ============================================
+# Spicetify
+spicetify/.config/spicetify/Backup/
+spicetify/.config/spicetify/Extracted/
+
+# Discord/Vencord
+vencord/.config/Vencord/dist/
+vencord/.config/Vencord/themes/*.theme.css.backup
+
+# Pywal
+pywal/.cache/
+
+# ============================================
+# System Files
+# ============================================
+# Linux
+.directory
+.Trash-*
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Thumbnails
+._*
+
+# ============================================
+# Backup & Temporary Files
+# ============================================
+*.backup
+*.bak
+*.swp
+*.swo
+*~
+*.orig
+
+# Config backups
+*.conf.backup
+*.conf.old
+*.toml.backup
+*.json.backup
+
+# ============================================
+# Logs
+# ============================================
+*.log
+logs/
+
+# ============================================
+# Test Files
+# ============================================
+test.py
+test_*.py
+*_test.py
+test/
