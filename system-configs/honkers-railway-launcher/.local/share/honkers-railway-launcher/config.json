@@ -25,7 +25,7 @@
       "prefix": "/home/phuctruong/.local/share/honkers-railway-launcher/prefix",
       "builds": "/home/phuctruong/.local/share/honkers-railway-launcher/runners",
       "selected": "spritz-wine-tkg-staging-wow64-10.15-8",
-      "sync": "FSync",
+      "sync": "ESync",
       "language": "English",
       "borderless": true,
       "drives": {
@@ -50,7 +50,7 @@
       "fsr": {
         "strength": 2,
         "quality": "Performance",
-        "enabled": true
+        "enabled": false
       },
       "gamemode": false,
       "hud": "DXVK",
@@ -85,13 +85,13 @@
       }
     },
     "environment": {
-      "__GLX_VENDOR_LIBRARY_NAME": "nvidia",
-      "DXVK_STATE_CACHE_PATH": "/tmp/dxvk-cache",
-      "VK_ICD_FILENAMES": "/usr/share/vulkan/icd.d/nvidia_icd.json",
+      "__NV_PRIME_RENDER_OFFLOAD": "1",
       "DXVK_FRAME_RATE": "55",
       "DXVK_HUD": "fps,gpuload,devinfo",
-      "__NV_PRIME_RENDER_OFFLOAD": "1",
-      "mesa_glthread": "true"
+      "VK_ICD_FILENAMES": "/usr/share/vulkan/icd.d/nvidia_icd.json",
+      "DXVK_STATE_CACHE_PATH": "/tmp/dxvk-cache",
+      "mesa_glthread": "true",
+      "__GLX_VENDOR_LIBRARY_NAME": "nvidia"
     },
     "command": null
   },

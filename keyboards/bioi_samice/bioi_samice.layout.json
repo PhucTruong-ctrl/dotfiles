@@ -122,8 +122,8 @@
       "KC_DOWN",
       "KC_UP",
       "KC_RGHT",
-      "KC_TRNS",
-      "KC_TRNS",
+      "KC_BRIU",
+      "KC_BRID",
       "KC_ENT",
       "KC_TRNS",
       "KC_NO",
@@ -136,9 +136,9 @@
       "KC_TRNS",
       "KC_PGUP",
       "KC_PGDN",
-      "KC_TRNS",
-      "KC_TRNS",
-      "KC_TRNS",
+      "KC_MPRV",
+      "KC_MPLY",
+      "KC_MNXT",
       "KC_TRNS",
       "KC_TRNS",
       "KC_NO",
@@ -314,4 +314,3 @@
   ],
   "encoders": []
 }
-
