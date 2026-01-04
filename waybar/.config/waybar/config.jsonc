@@ -4,43 +4,46 @@
   "position": "top",
   "spacing": 10,
   "height": 26,
-  "margin": 6,
-  "modules-left": ["custom/omarchy", "hyprland/workspaces"],
-  "modules-center": ["clock", "custom/update", "custom/screenrecording-indicator"],
+  "margin": 3,
+  "modules-left": [
+    "group/group-power",
+    "custom/update",
+    "group/hardware",
+    "custom/cava",
+    "custom/screenrecording-indicator"
+  ],
+  "modules-center": [
+    "hyprland/workspaces"
+  ],
   "modules-right": [
     "group/tray-expander",
     "bluetooth",
-    "network",
+    "group/network-full",
     "pulseaudio",
-    "cpu",
-    "battery"
+    "clock"
   ],
   "hyprland/workspaces": {
     "on-click": "activate",
     "format": "{icon}",
     "format-icons": {
       "default": "",
-      "1": "1",
-      "2": "2",
-      "3": "3",
-      "4": "4",
-      "5": "5",
+      "1": "\udb80\ude39",
+      "2": "\uf1ff",
+      "3": "\udb82\ude1e",
+      "4": "\uf001",
+      "5": "\udb82\udcc7",
       "6": "6",
       "7": "7",
       "8": "8",
       "9": "9",
-      "10": "0",
-      "active": "󱓻"
+      "10": "0"
     },
     "persistent-workspaces": {
       "1": [],
       "2": [],
       "3": [],
       "4": [],
-      "5": [],
-      "6": [],
-      "7": [],
-      "8": [],
+      "5": []
     }
   },
   "custom/omarchy": {
@@ -57,12 +60,40 @@
     "signal": 7,
     "interval": 21600
   },
-
+  "group/hardware": {
+    "orientation": "horizontal",
+    "modules": [
+      "temperature",
+      "cpu",
+      "memory",
+      "battery"
+    ]
+  },
   "cpu": {
     "interval": 5,
-    "format": "󰍛",
+    "format": "󰍛 {usage}%",
     "on-click": "omarchy-launch-or-focus-tui btop",
     "on-click-right": "alacritty"
+  },
+  "memory": {
+    "interval": 30,
+    "format": "\udb83\udf85 {used:0.1f}GB",
+    "tooltip-format": "RAM: {percentage}%\nSwap: {swapPercentage}%",
+    "states": {
+      "warning": 70,
+      "critical": 90
+    }
+  },
+  "temperature": {
+    "hwmon-path": "/sys/class/hwmon/hwmon6/temp1_input",
+    "critical-threshold": 80,
+    "format": "{icon} {temperatureC}°C",
+    "format-critical": "{icon} {temperatureC}°C",
+    "format-icons": [
+      "",
+      "",
+      ""
+    ]
   },
   "clock": {
     "format": "{:L%A %H:%M}",
@@ -70,29 +101,70 @@
     "tooltip": false,
     "on-click-right": "omarchy-launch-floating-terminal-with-presentation omarchy-tz-select"
   },
+  "group/network-full": {
+    "orientation": "horizontal",
+    "modules": [
+      "network",
+      "group/network-stats"
+    ]
+  },
+  "group/network-stats": {
+    "orientation": "vertical",
+    "modules": [
+      "network#upload",
+      "network#download"
+    ]
+  },
   "network": {
-    "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
+    "format-icons": [
+      "󰤯",
+      "󰤟",
+      "󰤢",
+      "󰤥",
+      "󰤨"
+    ],
     "format": "{icon}",
     "format-wifi": "{icon}",
     "format-ethernet": "󰀂",
     "format-disconnected": "󰤮",
-    "tooltip-format-wifi": "{essid} ({frequency} GHz)\n⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
-    "tooltip-format-ethernet": "⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
+    "tooltip-format-wifi": "{essid} ({frequency} GHz)",
     "tooltip-format-disconnected": "Disconnected",
     "interval": 3,
     "spacing": 1,
     "on-click": "omarchy-launch-wifi"
   },
+  "network#upload": {
+    "format-wifi": "↑ {bandwidthUpBits}",
+    "format-ethernet": "↑ {bandwidthUpBits}",
+    "interval": 3
+  },
+  "network#download": {
+    "format-wifi": "↓ {bandwidthDownBits}",
+    "format-ethernet": "↓ {bandwidthDownBits}",
+    "interval": 3
+  },
   "battery": {
-    "format": "{capacity}% {icon}",
+    "format": "{icon} {capacity}%",
     "format-discharging": "{icon}",
     "format-charging": "{icon}",
     "format-plugged": "",
     "format-icons": {
-      "charging": ["󰢜", "󰂆", "󰂇", "󰂈", "󰢝", "󰂉", "󰢞", "󰂊", "󰂋", "󰂅"],
-      "default": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
+      "charging": [
+        "󱐌",
+        "󱐌",
+        "󱐌",
+        "󱐌",
+        "󱐌"
+      ],
+      "default": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
     },
-    "format-full": "󰂅",
+    "format-full": "󱐌",
     "tooltip-format-discharging": "{power:>1.0f}W↓ {capacity}%",
     "tooltip-format-charging": "{power:>1.0f}W↑ {capacity}%",
     "interval": 5,
@@ -111,14 +183,17 @@
     "on-click": "omarchy-launch-bluetooth"
   },
   "pulseaudio": {
-    "format": "{icon}",
+    "format": "{icon} {volume}%",
     "on-click": "omarchy-launch-or-focus-tui wiremix",
     "on-click-right": "pamixer -t",
-    "tooltip-format": "Playing at {volume}%",
     "scroll-step": 5,
     "format-muted": "",
     "format-icons": {
-      "default": ["", "", ""]
+      "default": [
+        "",
+        "",
+        ""
+      ]
     }
   },
   "group/tray-expander": {
@@ -127,7 +202,10 @@
       "transition-duration": 600,
       "children-class": "tray-group-item"
     },
-    "modules": ["custom/expand-icon", "tray"]
+    "modules": [
+      "custom/expand-icon",
+      "tray"
+    ]
   },
   "custom/expand-icon": {
     "format": "",
@@ -140,7 +218,53 @@
     "return-type": "json"
   },
   "tray": {
-    "icon-size": 12,
-    "spacing": 17
+    "icon-size": 16,
+    "spacing": 14,
+    "show-passive-items": true,
+    "icons": {
+      "discord": "discord",
+      "spotify": "spotify-client"
+    }
+  },
+  "group/group-power": {
+    "orientation": "horizontal",
+    "drawer": {
+      "transition-duration": 600,
+      "children-class": "not-omarchy",
+      "transition-left-to-right": true
+    },
+    "modules": [
+      "custom/omarchy", // First element is the "group leader" and won't ever be hidden
+      "custom/power",
+      "custom/quit",
+      "custom/lock",
+      "custom/reboot"
+    ]
+  },
+  "custom/quit": {
+    "format": "󰗼",
+    "tooltip": false,
+    "on-click": "hyprctl dispatch exit"
+  },
+  "custom/lock": {
+    "format": "\uea75",
+    "tooltip": false,
+    "on-click": "swaylock"
+  },
+  "custom/reboot": {
+    "format": "\udb81\udf09",
+    "tooltip": false,
+    "on-click": "reboot"
+  },
+  "custom/power": {
+    "format": "\uf011",
+    "tooltip": false,
+    "on-click": "shutdown now"
+  },
+  "custom/cava": {
+    "format": "{}",
+    "exec": "~/.config/waybar/scripts/cava_module.py",
+    "return-type": "json",
+    "tooltip": false
   }
 }

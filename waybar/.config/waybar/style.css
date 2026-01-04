@@ -2,41 +2,59 @@
 @import url("file:///home/phuctruong/.cache/wal/colors-waybar.css");
 
 * {
-  background-color: @background;
+  background-color: transparent;
   color: @foreground;
-
-  border: none;
-  border-radius: 0;
-  min-height: 0;
-  padding: 2px;
   border-radius: 10px;
   font-family: 'JetBrainsMono Nerd Font';
-  font-size: 14px;
+  font-size: 16px;
+}
+
+.modules-center {
+  background-color: @background;
 }
 
 .modules-left {
-  margin-left: 8px;
+  /*  */
 }
 
 .modules-right {
-  margin-right: 8px;
+  /*  */
+}
+
+#workspaces button.persistent label {
+  font-size: 20px;
 }
 
 #workspaces button {
   all: initial;
-  padding: 0 6px;
-  margin: 0 1.5px;
-  min-width: 9px;
+  padding: 2px 14px;
+  border-radius: 8px;
+  opacity: 0.4;
+  transition: all 0.4s cubic-bezier(0.4, 0.0, 0.2, 1);
 }
 
 #workspaces button.empty {
-  opacity: 0.5;
+  opacity: 0.2;
 }
 
-#cpu,
-#battery,
-#pulseaudio,
-#custom-omarchy,
+#workspaces button.active {
+  color: @background;
+  opacity: 1;
+}
+
+#hardware {
+  background-color: @background;
+}
+
+#hardware * {
+  padding: 2px 7px;
+}
+
+#pulseaudio {
+  background-color: @background;
+  padding: 2px 14px;
+}
+
 #custom-screenrecording-indicator,
 #custom-update {
   min-width: 12px;
@@ -44,22 +62,51 @@
 }
 
 #tray {
-  margin-right: 16px;
+  /* margin: 0px 14px; */
 }
 
 #bluetooth {
-  margin-right: 17px;
+  background-color: @background;
+  padding: 2px 14px;
+}
+
+#network-full {
+  background-color: @background;
 }
 
 #network {
-  margin-right: 13px;
+  padding: 2px 0px 2px 14px;
+}
+
+#network-stats {
+  padding: 2px 14px 2px 0px;
+}
+
+#network-stats * {
+  font-size: 13px;
+}
+
+#network.upload {
+  margin-bottom: -4px;
+  font-weight: 600;
+  color: #ff4c2d;
+}
+
+#network.download {
+  margin-top: -4px;
+  font-weight: 600;
+  color: #4672f7;
+}
+
+#tray-expander {
+  background-color: @background;
 }
 
 #custom-expand-icon {
-  margin-right: 18px;
+  padding: 2px 14px;
 }
 
-tooltip {
+#tooltip {
   padding: 2px;
 }
 
@@ -68,7 +115,10 @@ tooltip {
 }
 
 #clock {
-  margin-left: 8.75px;
+  background-color: @background;
+  font-size: 16px;
+  font-family: 'Audiowide';
+  padding: 2px 14px;
 }
 
 .hidden {
@@ -83,4 +133,29 @@ tooltip {
 
 #custom-screenrecording-indicator.active {
   color: #a55555;
+}
+
+#custom-omarchy {
+  padding: 2px 16px;
+}
+
+#group-power {
+  background-color: @background;
+}
+
+#custom-quit,
+#custom-lock,
+#custom-reboot,
+#custom-power {
+  margin: 0px 14px;
+}
+
+#custom-cava {
+  background-color: @background;
+  color: @foreground;
+  border-left: 0px;
+  border-right: 0px;
+  padding-bottom: 6px;
+  font-size: 26px;
+  font-family: 'bargraph';
 }
