@@ -42,3 +42,4 @@ alias reload='source ~/.zshrc' # Gõ reload là cập nhật config
 # fi
 #
 
+export PATH="$HOME/.local/bin:$PATH"
