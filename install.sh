@@ -37,6 +37,7 @@ USER_CONFIGS=(
     "lazygit"
     "mako"
     "nvim"
+    "opencode"
     "spicetify"
     "starship"
     "tmux"

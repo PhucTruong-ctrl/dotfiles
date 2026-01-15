@@ -27,14 +27,14 @@
       "selected": "spritz-wine-tkg-staging-wow64-10.15-8",
       "sync": "ESync",
       "language": "English",
-      "borderless": true,
+      "borderless": false,
       "drives": {
         "drive_c": true,
         "game_folder": "G",
         "map_folders": {}
       },
       "virtual_desktop": {
-        "enabled": true,
+        "enabled": false,
         "width": 1280,
         "height": 720
       },
@@ -52,22 +52,22 @@
         "quality": "Performance",
         "enabled": false
       },
-      "gamemode": false,
+      "gamemode": true,
       "hud": "DXVK",
       "gamescope": {
-        "enabled": false,
-        "window_mode": "Default",
+        "enabled": true,
+        "window_mode": "Fullscreen",
         "game_window": {
-          "width": null,
-          "height": null
+          "width": 1920,
+          "height": 1080
         },
         "gamescope_window": {
-          "width": null,
-          "height": null
+          "width": 1920,
+          "height": 1080
         },
         "framerate": {
-          "focused": null,
-          "unfocused": null
+          "focused": 60,
+          "unfocused": 15
         },
         "upscaling": {
           "upscaler": "None",
@@ -76,22 +76,30 @@
         },
         "options": {
           "hdr_support": false,
-          "realtime_scheduler": false,
+          "realtime_scheduler": true,
           "adaptive_sync": false,
-          "force_grab_cursor": false,
+          "force_grab_cursor": true,
           "mangohud": false
         },
-        "extra_args": ""
+        "extra_args": "--prefer-vk-device 10de:1d13"
       }
     },
     "environment": {
+      "DXVK_STATE_CACHE_PATH": "/home/phuctruong/.local/share/honkers-railway-launcher",
+      "__GL_SYNC_TO_VBLANK": "0",
+      "WINE_FULLSCREEN_FSR": "0",
       "__NV_PRIME_RENDER_OFFLOAD": "1",
-      "DXVK_FRAME_RATE": "55",
-      "DXVK_HUD": "fps,gpuload,devinfo",
       "VK_ICD_FILENAMES": "/usr/share/vulkan/icd.d/nvidia_icd.json",
-      "DXVK_STATE_CACHE_PATH": "/tmp/dxvk-cache",
       "mesa_glthread": "true",
-      "__GLX_VENDOR_LIBRARY_NAME": "nvidia"
+      "DXVK_LOG_LEVEL": "none",
+      "DXVK_HUD": "fps",
+      "vblank_mode": "0",
+      "__GL_SHADER_DISK_CACHE_SKIP_CLEANUP": "1",
+      "WINEFSYNC": "1",
+      "PROTON_NO_FSYNC": "0",
+      "DXVK_CONFIG": "d3d11.cachedDynamicResources=a",
+      "__GLX_VENDOR_LIBRARY_NAME": "nvidia",
+      "__GL_THREADED_OPTIMIZATION": "1"
     },
     "command": null
   },

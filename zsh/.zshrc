@@ -43,3 +43,23 @@ alias reload='source ~/.zshrc' # Gõ reload là cập nhật config
 #
 
 export PATH="$HOME/.local/bin:$PATH"
+
+# opencode
+export PATH=/home/phuctruong/.opencode/bin:$PATH
+
+# bun completions
+[ -s "/home/phuctruong/.bun/_bun" ] && source "/home/phuctruong/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+PATH="/home/phuctruong/perl5/bin${PATH:+:${PATH}}"; export PATH;
+PERL5LIB="/home/phuctruong/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
+PERL_LOCAL_LIB_ROOT="/home/phuctruong/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
+PERL_MB_OPT="--install_base \"/home/phuctruong/perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=/home/phuctruong/perl5"; export PERL_MM_OPT;
