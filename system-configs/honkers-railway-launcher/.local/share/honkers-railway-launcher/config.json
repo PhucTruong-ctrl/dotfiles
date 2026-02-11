@@ -25,9 +25,9 @@
       "prefix": "/home/phuctruong/.local/share/honkers-railway-launcher/prefix",
       "builds": "/home/phuctruong/.local/share/honkers-railway-launcher/runners",
       "selected": "spritz-wine-tkg-staging-wow64-10.15-8",
-      "sync": "ESync",
+      "sync": "None",
       "language": "English",
-      "borderless": false,
+      "borderless": true,
       "drives": {
         "drive_c": true,
         "game_folder": "G",
@@ -52,10 +52,10 @@
         "quality": "Performance",
         "enabled": false
       },
-      "gamemode": true,
-      "hud": "DXVK",
+      "gamemode": false,
+      "hud": "MangoHUD",
       "gamescope": {
-        "enabled": true,
+        "enabled": false,
         "window_mode": "Fullscreen",
         "game_window": {
           "width": 1920,
@@ -70,9 +70,9 @@
           "unfocused": 15
         },
         "upscaling": {
-          "upscaler": "None",
-          "filter": "None",
-          "sharpness": "None"
+          "upscaler": "Auto",
+          "filter": "FSR",
+          "sharpness": "Balanced"
         },
         "options": {
           "hdr_support": false,
@@ -85,23 +85,18 @@
       }
     },
     "environment": {
-      "DXVK_STATE_CACHE_PATH": "/home/phuctruong/.local/share/honkers-railway-launcher",
-      "__GL_SYNC_TO_VBLANK": "0",
-      "WINE_FULLSCREEN_FSR": "0",
-      "__NV_PRIME_RENDER_OFFLOAD": "1",
-      "VK_ICD_FILENAMES": "/usr/share/vulkan/icd.d/nvidia_icd.json",
-      "mesa_glthread": "true",
-      "DXVK_LOG_LEVEL": "none",
-      "DXVK_HUD": "fps",
-      "vblank_mode": "0",
+      "WINE_ALERT_SIMULATE_SCHED_QUANTUM": "1",
+      "DXVK_ASYNC": "1",
+      "DXVK_STATE_CACHE": "1",
+      "DXVK_FRAME_RATE": "60",
+      "__GL_THREADED_OPTIMIZATIONS": "1",
+      "__GL_MaxFramesAllowed": "1",
+      "__GL_SHADER_DISK_CACHE": "1",
       "__GL_SHADER_DISK_CACHE_SKIP_CLEANUP": "1",
-      "WINEFSYNC": "1",
-      "PROTON_NO_FSYNC": "0",
-      "DXVK_CONFIG": "d3d11.cachedDynamicResources=a",
-      "__GLX_VENDOR_LIBRARY_NAME": "nvidia",
-      "__GL_THREADED_OPTIMIZATION": "1"
+      "WINE_LARGE_ADDRESS_AWARE": "1",
+      "MANGOHUD": "1"
     },
-    "command": null
+    "command": "gamemoderun prime-run %command%"
   },
   "sandbox": {
     "enabled": false,
