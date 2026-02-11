@@ -34,6 +34,7 @@ USER_CONFIGS=(
     "fcitx5"
     "hypr"
     "lazygit"
+    "mangohud"
     "nvim"
     "omarchy"
     "opencode"
